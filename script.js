@@ -6,61 +6,61 @@ const products = [
         id: 1,
         name: "Compact Travel Umbrella",
         basePrice: 399,
-        image: "images/umbrella1.jpg"
+        image: "images/Umbrella1.jpg"
     },
     {
         id: 2,
         name: "Golf Umbrella (Extra Large)",
         basePrice: 899,
-        image: "images/umbrella2.jpg"
+        image: "images/Umbrella2.jpg"
     },
     {
         id: 3,
         name: "Automatic Open/Close Umbrella",
         basePrice: 599,
-        image: "images/umbrella3.jpg"
+        image: "images/Umbrella3.jpg"
     },
     {
         id: 4,
         name: "Designer Floral Umbrella",
         basePrice: 749,
-        image: "images/umbrella4.jpg"
+        image: "images/Umbrella4.jpg"
     },
     {
         id: 5,
         name: "Green Umbrella",
         basePrice: 749,
-        image: "images/umbrella5.jpg"
+        image: "images/Umbrella5.jpg"
     },
     {
         id: 6,
         name: "Black Umbrella",
         basePrice: 749,
-        image: "images/umbrella6.jpg"
+        image: "images/Umbrella6.jpg"
     },
     {
         id: 7,
         name: "Red Umbrella",
         basePrice: 749,
-        image: "images/umbrella7.jpg"
+        image: "images/Umbrella7.jpg"
     },
     {
         id: 8,
         name: "Great Umbrella",
         basePrice: 1099,
-        image: "images/umbrella8.jpg"
+        image: "images/Umbrella8.jpg"
     },
     {
         id: 9,
         name: "Windproof Storm Umbrella",
         basePrice: 1099,
-        image: "images/umbrella9.jpg"
+        image: "images/Umbrella9.jpg"
     },
     {
         id: 10,
         name: "Kids Cartoon Umbrella",
         basePrice: 299,
-        image: "images/umbrella10.jpg"
+        image: "images/Umbrella10.jpg"
     }
 ];
 
