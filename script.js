@@ -6,61 +6,61 @@ const products = [
         id: 1,
         name: "Compact Travel Umbrella",
         basePrice: 399,
-        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.nextdirect.com%2Fin%2Fen%2Fstyle%2Fsu071685%2F699427&psig=AOvVaw20hfWSx8AU8WmF9Oh3DtAY&ust=1757500052445000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKiemYe8y48DFQAAAAAdAAAAABAE"
+        image: "images/umbrella1.jpg"
     },
     {
         id: 2,
         name: "Golf Umbrella (Extra Large)",
         basePrice: 899,
-        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.nytimes.com%2Fwirecutter%2Freviews%2Fbest-umbrella%2F&psig=AOvVaw20hfWSx8AU8WmF9Oh3DtAY&ust=1757500052445000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKiemYe8y48DFQAAAAAdAAAAABAL"
+        image: "images/umbrella2.jpg"
     },
     {
         id: 3,
         name: "Automatic Open/Close Umbrella",
         basePrice: 599,
-        image: "hhttps://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.sunumbrellas.in%2FLADIES%2Fa-series-blue-2-fold---uv-protective-umbrella%2F397%2Fdetail&psig=AOvVaw20hfWSx8AU8WmF9Oh3DtAY&ust=1757500052445000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKiemYe8y48DFQAAAAAdAAAAABAV"
+        image: "images/umbrella3.jpg"
     },
     {
         id: 4,
         name: "Designer Floral Umbrella",
         basePrice: 749,
-        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.johns.in%2Fproducts%2Fjohns-uncle-john-gents-mono-colour-umbrella-685mm%3Fsrsltid%3DAfmBOopI-rsM5ESPi34LMh9uBMLMjAgM42nv9jcScehYn2APERGKP5jR&psig=AOvVaw20hfWSx8AU8WmF9Oh3DtAY&ust=1757500052445000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKiemYe8y48DFQAAAAAdAAAAABAf"
+        image: "images/umbrella4.jpg"
     },
-   {
+    {
         id: 5,
         name: "Green Umbrella",
         basePrice: 749,
-        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.decathlon.in%2Fp%2F8602667%2Fwaterproof-umbrella-medium-size-123cm-coverage-uv-protection-auto-open-red&psig=AOvVaw20hfWSx8AU8WmF9Oh3DtAY&ust=1757500052445000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKiemYe8y48DFQAAAAAdAAAAABAp"
+        image: "images/umbrella5.jpg"
     },
     {
         id: 6,
         name: "Black Umbrella",
         basePrice: 749,
-        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.sunumbrellas.in%2FGENTS%2Fz-series-blue--3-fold---uv-protective-umbrella%2F406%2Fdetail&psig=AOvVaw20hfWSx8AU8WmF9Oh3DtAY&ust=1757500052445000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKiemYe8y48DFQAAAAAdAAAAABA9"
+        image: "images/umbrella6.jpg"
     },
     {
         id: 7,
         name: "Red Umbrella",
         basePrice: 749,
-        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.jiomart.com%2Fp%2Fhomeandkitchen%2Faxaka-rainy-season-use-hand-rainbow-umbrella-for-men-and-women-multicolour%2F602723706&psig=AOvVaw20hfWSx8AU8WmF9Oh3DtAY&ust=1757500052445000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKiemYe8y48DFQAAAAAdAAAAABAz"
+        image: "images/umbrella7.jpg"
     },
     {
         id: 8,
         name: "Great Umbrella",
         basePrice: 1099,
-        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.ubuy.co.in%2Fproduct%2F8W5X40T8O-toyfunny-transparent-clear-umbrella-umbrella-pp%3Fsrsltid%3DAfmBOop7Wi0S5U0nVtrwngLlm2jukLqyuzJYnXQU8TwerLEWcbbwEmjK&psig=AOvVaw20hfWSx8AU8WmF9Oh3DtAY&ust=1757500052445000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKiemYe8y48DFQAAAAAdAAAAABBQ"
+        image: "images/umbrella8.jpg"
     },
     {
         id: 9,
         name: "Windproof Storm Umbrella",
         basePrice: 1099,
-        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vistaprint.in%2Fclothing-bags%2Fumbrellas%2Fsun-stick-umbrellas&psig=AOvVaw20hfWSx8AU8WmF9Oh3DtAY&ust=1757500052445000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKiemYe8y48DFQAAAAAdAAAAABBX"
+        image: "images/umbrella9.jpg"
     },
     {
         id: 10,
         name: "Kids Cartoon Umbrella",
         basePrice: 299,
-        image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fjollybrolly.co.uk%2Fblogs%2Fblog%2F10-different-ways-to-use-an-umbrella%3Fsrsltid%3DAfmBOorgKW8U1oIYC5DyrKO8pJpLjsqCAKIcengeURH_FvZCp8pvXFZt&psig=AOvVaw20hfWSx8AU8WmF9Oh3DtAY&ust=1757500052445000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKiemYe8y48DFQAAAAAdAAAAABBr"
+        image: "images/umbrella10.jpg"
     }
 ];
 
