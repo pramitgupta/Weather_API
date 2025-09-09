@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>☂️ Smart Umbrella Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>☂️ Smart Umbrella Shop</h1>
+        <p>Prices adjust based on tomorrow’s weather!</p>
+
+        <div class="location-selector">
+            <label for="city">📍 Select Your City:</label>
+            <input type="text" id="city" placeholder="e.g., Pune, London, Tokyo" />
+            <button onclick="checkWeather()">Check Weather & Price</button>
+        </div>
+
+        <div id="result" class="result-box hidden">
+            <h2>Forecast for <span id="location"></span></h2>
+            <p><strong>Condition:</strong> <span id="weather-desc"></span></p>
+            <p><strong>Temperature:</strong> <span id="temp"></span>°C</p>
+            <p><strong>Umbrella Price:</strong> <span id="price"></span></p>
+            <p class="recommendation" id="recommendation"></p>
+        </div>
+
+        <div id="loading" class="hidden">⏳ Fetching weather data...</div>
+        <div id="error" class="error hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
