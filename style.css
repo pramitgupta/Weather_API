@@ -115,6 +115,7 @@ button:hover {
     text-decoration: line-through;
     color: #aaa;
     font-size: 0.9em;
+    margin-left: 8px;
 }
 
 .add-to-cart {
