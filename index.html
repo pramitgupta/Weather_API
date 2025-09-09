@@ -2,30 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>☂️ Smart Umbrella Shop</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <h1>☂️ Smart Umbrella Shop</h1>
-        <p>Prices adjust based on tomorrow’s weather!</p>
+        <p>Umbrella prices adjust based on tomorrow’s weather! 🌦️</p>
 
+        <!-- Location Input -->
         <div class="location-selector">
-            <label for="city">📍 Select Your City:</label>
+            <label for="city">📍 Enter Your City:</label>
             <input type="text" id="city" placeholder="e.g., Pune, London, Tokyo" />
-            <button onclick="checkWeather()">Check Weather & Price</button>
+            <button onclick="checkWeather()">Check Weather & Update Prices</button>
         </div>
 
-        <div id="result" class="result-box hidden">
-            <h2>Forecast for <span id="location"></span></h2>
-            <p><strong>Condition:</strong> <span id="weather-desc"></span></p>
-            <p><strong>Temperature:</strong> <span id="temp"></span>°C</p>
-            <p><strong>Umbrella Price:</strong> <span id="price"></span></p>
-            <p class="recommendation" id="recommendation"></p>
+        <!-- Weather Display -->
+        <div id="weather-display" class="weather-box hidden">
+            <h3>Forecast for <span id="location-name"></span></h3>
+            <p><strong>Condition:</strong> <span id="weather-condition"></span></p>
+            <p><strong>Temp:</strong> <span id="weather-temp"></span>°C</p>
+            <p id="recommendation" class="recommendation"></p>
         </div>
 
+        <!-- Loading & Error -->
         <div id="loading" class="hidden">⏳ Fetching weather data...</div>
         <div id="error" class="error hidden"></div>
+
+        <!-- Products Grid -->
+        <div class="products-grid" id="products-grid">
+            <!-- Products will be injected here by JS -->
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <h3>🛒 Your Cart (<span id="cart-count">0</span>)</h3>
+        <div id="cart-items">
+            <!-- Cart items will appear here -->
+        </div>
+        <div class="cart-total">
+            <strong>Total: ₹<span id="cart-total">0.00</span></strong>
+        </div>
+        <button id="checkout-btn" onclick="checkout()">💳 Checkout</button>
     </div>
 
     <script src="script.js"></script>
