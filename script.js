@@ -78,18 +78,23 @@ function renderProducts(productList) {
     grid.innerHTML = '';
 
     productList.forEach(product => {
-        const discountedPrice = isRainyTomorrow ? (product.basePrice * 0.9).toFixed(2) : product.basePrice;
-        const isDiscounted = isRainyTomorrow;
+        const discountedPrice = isRainyTomorrow ? (product.basePrice * 0.9).toFixed(2) : null;
+        const displayPrice = isRainyTomorrow ? discountedPrice : product.basePrice.toFixed(2);
 
         const card = document.createElement('div');
         card.className = 'product-card';
+
+        // ✅ Always show original price crossed out if discounted
+        let priceHtml = `<div class="product-price">₹${displayPrice}`;
+        if (isRainyTomorrow) {
+            priceHtml += ` <span class="original-price">₹${product.basePrice.toFixed(2)}</span>`;
+        }
+        priceHtml += `</div>`;
+
         card.innerHTML = `
             <img src="${product.image}" alt="${product.name}" class="product-img">
             <h3 class="product-name">${product.name}</h3>
-            <div class="product-price">
-                ₹${discountedPrice}
-                ${isDiscounted ? `<div class="original-price">₹${product.basePrice}</div>` : ''}
-            </div>
+            ${priceHtml}
             <button class="add-to-cart" onclick="addToCart(${product.id})">Add to Cart</button>
         `;
         grid.appendChild(card);
@@ -102,13 +107,15 @@ function addToCart(productId) {
     if (!product) return;
 
     const existing = cart.find(item => item.id === productId);
+    const finalPrice = isRainyTomorrow ? (product.basePrice * 0.9) : product.basePrice;
+
     if (existing) {
         existing.quantity += 1;
     } else {
         cart.push({
             id: product.id,
             name: product.name,
-            price: isRainyTomorrow ? product.basePrice * 0.9 : product.basePrice,
+            price: finalPrice, // ✅ Uses discounted price if applicable
             quantity: 1
         });
     }
@@ -184,7 +191,6 @@ async function checkWeather() {
     weatherDiv.classList.add('hidden');
 
     try {
-        // Step 1: Geocode city
         const geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(cityInput)}&limit=1&appid=${API_KEY}`;
         const geoResponse = await fetch(geoUrl);
         const geoData = await geoResponse.json();
@@ -193,14 +199,12 @@ async function checkWeather() {
 
         const { lat, lon, name } = geoData[0];
 
-        // Step 2: Get forecast
         const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
         const forecastResponse = await fetch(forecastUrl);
         const forecastData = await forecastResponse.json();
 
         if (!forecastData.list?.length) throw new Error("Forecast unavailable.");
 
-        // Get tomorrow’s date
         const tomorrow = new Date();
         tomorrow.setDate(tomorrow.getDate() + 1);
         const tomorrowStr = tomorrow.toISOString().split('T')[0];
@@ -212,25 +216,24 @@ async function checkWeather() {
         if (!tomorrowsForecast) throw new Error("No data for tomorrow.");
 
         const { weather, main } = tomorrowsForecast;
-        const condition = weather[0].main;
-        const description = weather[0].description;
+        const condition = weather[0].main; // e.g., "Rain", "Clouds", "Clear"
+        const description = weather[0].description; // e.g., "overcast clouds"
         const temp = main.temp;
 
-        isRainyTomorrow = condition.toLowerCase().includes("rain");
+        // ✅ NEW LOGIC: Apply discount for "Rain" OR "Overcast"
+        isRainyTomorrow = condition.toLowerCase().includes("rain") || 
+                         description.toLowerCase().includes("overcast");
 
-        // Update UI
         document.getElementById('location-name').textContent = name;
         document.getElementById('weather-condition').textContent = description;
         document.getElementById('weather-temp').textContent = temp.toFixed(1);
 
         document.getElementById('recommendation').textContent = isRainyTomorrow
-            ? "🌧️ Recommended: Umbrellas 10% OFF! Stock up & run promo!"
-            : "☀️ No rain tomorrow. Regular pricing applies.";
+            ? "🌦️ Recommended: Umbrellas 10% OFF! Possible rain — stock up & run promo!"
+            : "☀️ No rain expected. Regular pricing applies.";
 
         weatherDiv.classList.remove('hidden');
-
-        // Re-render products with updated pricing
-        renderProducts(products);
+        renderProducts(products); // Re-render with updated pricing
 
     } catch (error) {
         errorDiv.textContent = "❌ " + error.message;
